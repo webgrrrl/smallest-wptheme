@@ -7,13 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smallest WP Theme</title>
+    <title>
+        <?php wp_title('at','true','right'); ?>
+        <?php bloginfo('name'); ?>
+    </title>
+    <?php
+        wp_head();
+    ?>
+    <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
   </head>
 
   <body>
@@ -54,8 +56,8 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Album example</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+          <h1 class="jumbotron-heading"><?php bloginfo('name'); ?></h1>
+          <p class="lead text-muted"><?php bloginfo('description'); ?></p>
           <p>
             <a href="#" class="btn btn-primary my-2">Main call to action</a>
             <a href="#" class="btn btn-secondary my-2">Secondary action</a>
@@ -223,7 +225,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <?php wp_footer(); ?>
   </body>
 </html>
